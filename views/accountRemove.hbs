@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container-fluid mt-5 w-25">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <form action="/auth/remove" method="POST">
+                        <fieldset>
+                            <legend>Remove Account</legend>
+
+                            <label for="id">ID:</label>
+                            <br>
+                            <input type="number" id="account_id" name="account_id" value="{{result.account_id}}" readonly>
+                            <br>
+
+                            <label for="firstName">First Name:</label>
+                            <br>
+                            <input type="text" id="first_name" name="firstName" value="{{result.first_name}}" readonly>
+                            <br>
+
+                            <label for="lastName">Last Name:</label>
+                            <br>
+                            <input type="text" id="last_name" name="lastName" value="{{result.last_name}}" readonly>
+                            <br>
+
+
+                            <label for="email">Email:</label>
+                            <br>
+                            <input type="email" id="email" name="email" value="{{result.email}}" readonly>
+                            <br>
+
+                            <button class="btn btn-danger m-1" type="submit">Delete</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{#if message}}
+            <h4 class="alert alert-danger">{{message}}</h4>
+        {{/if}}
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>
